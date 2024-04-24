@@ -1,0 +1,231 @@
+.message-content {
+  max-width: 90%;
+  overflow: hidden;
+  overflow-x: auto;
+  background: #f4f6f8;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 15px 15px 15px;
+  font-family: "PingFang SC";
+  font-size: 16px;
+
+  .arco-image {
+    max-width: 20rem;
+    border-radius: var(--border-radius-large);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    color: #212529;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+  }
+  tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+
+  tr:hover {
+    background-color: #e9ecef;
+  }
+
+  td:first-child,
+  th:first-child {
+    border-left: none;
+  }
+
+  td:last-child,
+  th:last-child {
+    border-right: none;
+  }
+
+  ul,
+  li,
+  ol,
+  p {
+    list-style: normal;
+  }
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  &:hover ~ .speak {
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    position: relative;
+    &:before {
+      content: "";
+      background: none;
+      background-image: linear-gradient(
+        120deg,
+        rgba(56, 88, 246, 0.1) 0%,
+        #0d6efd 100%
+      );
+      background-repeat: no-repeat;
+      background-position: 0 80%;
+      background-size: 100% 0.4em;
+      display: inline-block;
+      color: inherit;
+      height: 20px;
+      width: 6rem;
+      position: absolute;
+      bottom: 0px;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .main .chat-body .chat-content .message .message-content {
+    max-width: 90%;
+    font-size: 14px;
+  }
+}
+.message.right .message-content {
+  background-color: #3975f9;
+  color: #fff;
+  text-align: left;
+  border-radius: 15px 0 15px 15px;
+  border: none !important;
+}
+
+.ai_chat {
+  .chat-list li:hover .hover_action svg {
+    color: #275bff;
+  }
+
+  .chat-body .chat-footer {
+    bottom: 45px;
+    width: 100%;
+    left: 0px;
+    z-index: 10;
+  }
+}
+
+.ai_pdf_list .chat-list li:hover .hover_action svg {
+  color: #ff8c8c;
+}
+.chat-list li.active img.avatar {
+  filter: none;
+  max-width: fit-content;
+}
+
+.chat-list li img.avatar,
+.show-user-detail .avatar {
+  max-width: fit-content;
+}
+
+.chat-list li .hover_action {
+  background: none;
+  opacity: 0;
+}
+.chat-list li:hover .hover_action {
+  opacity: 1;
+}
+.main .chat-body .chat-footer .form-control,
+.main .chat-body .chat-footer .input-group-text {
+  background-color: #f9fbfc;
+}
+
+.main .chat-body.keda_chat {
+  background: radial-gradient(
+      circle at 12% 55%,
+      rgba(33, 150, 243, 0.15),
+      hsla(0, 0%, 100%, 0) 25%
+    ),
+    radial-gradient(
+      circle at 85% 33%,
+      rgba(108, 99, 255, 0.175),
+      hsla(0, 0%, 100%, 0) 25%
+    ),
+    radial-gradient(
+      circle at 25% 75%,
+      rgba(0, 0, 255, 0.2),
+      hsla(0, 0%, 100%, 0) 35%
+    );
+  background-size: 120%;
+  background-repeat: no-repeat;
+  animation: moveBackground1 10s ease infinite;
+}
+.chat-body {
+  position: relative;
+}
+
+.chat-header {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.chat-content {
+  position: relative;
+  .message.right .message-content::selection {
+    background: #409eff;
+  }
+
+  .message .message_content_footer {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .message .message-row:hover .message_content_footer {
+    display: inline;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.chat-footer {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px 40px 0;
+
+  .arco-textarea {
+    background-color: #fff;
+    border-radius: 20px;
+  }
+
+  .sendIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #5661f6;
+  }
+}
+
+.message-list {
+  position: absolute;
+  right: 0;
+  top: 35%;
+  color: #fff;
+  // transform: rotate(-90deg);
+  background-image: url("../../assets/imgs/side-bg.png");
+  background-size: 100% 100%;
+  width: 30px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  div {
+    transform: rotate(-90deg);
+    text-wrap: nowrap;
+  }
+}
