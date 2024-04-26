@@ -5,32 +5,37 @@ export const DefaultContent: Record<string, string> = {
 
 export const DefaultMes = [
   {
-    question: "产业提问",
-    quote: "sdsds",
-    message: "sdsds",
+    question: "爱玛科技2023年的总体营业收入和归母净利润分别是多少？",
+    message: "爱玛科技2023年实现营业收入210.4亿元，归母净利润18.8亿元",
   },
   {
-    question: "sdsds",
-    message: "sdsds",
+    question:
+      "爱玛科技电动自行车、电动两轮摩托车、电动三轮车在2023年的销售情况如何？",
+    quote: "2023年经营数据：爱玛科技2023年营业收入",
+    message:
+      "电动自行车销售760万辆，同比增长5.1%，收入128.5亿元；电动两轮摩托车销售269万辆，同比下降17.8%，收入58.1亿元；电动三轮车销售43万辆，同比增长63.2%，收入14.3亿元",
   },
   {
-    question: "sdsds",
-    message: "sdsds",
+    question: "2023年爱玛科技公司的毛利率和期间费用率有何变化？",
+    message:
+      "2023年爱玛科技公司综合毛利率为16.5%，同比增长0.1个百分点。期间费用率为6.2%，同比增长0.7个百分点",
   },
   {
-    question: "sdsds",
-    message: "sdsds",
+    question: "爱玛科技在哪些区域的销售表现突出？",
+    message:
+      "2023年，华中、西南、西北地区的销售额增速较快，其中西南地区增长27.8%，西北地区增长83.2%",
+  },
+];
+
+export const MockAnswer = [
+  {
+    question: "爱玛科技电动三轮车业务的表现如何，对公司业绩有何影响？",
+    message:
+      "电动三轮车需求呈现加速增长趋势，销量和毛利率均有显著提升，成为公司新的增长点，对整体业绩有正面影响。",
   },
   {
-    question: "sdsds",
-    message: "sdsds",
-  },
-  {
-    question: "sdsds",
-    message: "sdsds",
-  },
-  {
-    question: "sdsds",
-    message: "sdsds",
+    question: "爱玛科技公司在渠道和品牌建设方面的策略是什么？",
+    message:
+      "公司致力于渠道深耕和升级，包括渠道数量拓展和结构优化，以及品牌年轻化、高端化升级，通过产品力、渠道力和品牌力的提升来促进增长。",
   },
 ];

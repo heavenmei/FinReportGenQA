@@ -55,13 +55,6 @@
             <div class="message_content_footer flex gap-1">
               <div
                 class="btn z-10 new_ant_btn h-30"
-                @click="refresh_answer(item.question)"
-              >
-                <icon-refresh />
-                <span class="ant_hide">重新生成</span>
-              </div>
-              <div
-                class="btn z-10 new_ant_btn h-30"
                 @click="
                   code_copy(
                     item.message ? item.message.replace(/\\n/g, '\n') : ''
@@ -73,17 +66,12 @@
               </div>
               <div
                 class="btn z-10 new_ant_btn h-30"
-                @click="
-                  exportPdf(
-                    item.message
-                      ? renderMarkdown(item.message).replace(/\\n/g, '\n')
-                      : ''
-                  )
-                "
+                @click="refresh_answer(item.question)"
               >
-                <icon-download />
-                <span class="ant_hide">导出PDF</span>
+                <icon-refresh />
+                <span class="ant_hide">重新生成</span>
               </div>
+
               <a-popconfirm
                 content="此操作将永久删除当条消息,确定要删除吗?"
                 @ok="delete_this(item.id)"
@@ -120,7 +108,6 @@ import {
   IconDelete,
   IconCopy,
   IconRefresh,
-  IconDownload,
   IconRecordStop,
 } from "@arco-design/web-vue/es/icon";
 import { Message } from "@arco-design/web-vue";
@@ -128,7 +115,6 @@ import { delete_message } from "@/apis/api";
 import { code_copy, exportPdf } from "~/utils/util";
 import { defineEmits } from "vue";
 
-// const { ruleForm } = defineProps(["ruleForm"]);
 const emit = defineEmits(["all_message", "submitForm"]);
 
 const aiChatStore = useAiChat();

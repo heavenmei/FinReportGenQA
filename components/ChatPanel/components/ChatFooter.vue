@@ -29,7 +29,7 @@
             minRows: 1,
             maxRows: 4,
           }"
-          @keydown.enter.native.prevent="submitForm()"
+          @keydown.enter.native.prevent="submitForm2()"
           show-word-limit
         />
         <a-button
@@ -51,6 +51,7 @@ import { IconSend } from "@arco-design/web-vue/es/icon";
 import { Message } from "@arco-design/web-vue";
 import { useAiChat } from "../models";
 import { send_bot } from "@/apis/api";
+import { MockAnswer } from "~/pages/home/constant";
 
 const emit = defineEmits(["all_message"]);
 const aiChatStore = useAiChat();
@@ -68,6 +69,44 @@ const {
 const plugins_select = ref();
 const tmpMessage = ref("");
 const text_imageUrl = ref("");
+
+let index = 0;
+
+const submitForm2 = () => {
+  send_loading.value = true;
+  me_message.value.push({
+    session_id: ms_active.value,
+    question: send_form.value.message_input,
+    quote: send_form.value.quote,
+    message: "思考中...",
+  });
+  down_message();
+
+  setTimeout(() => {
+    const res = MockAnswer[index].message.split("");
+    index++;
+    me_message.value[me_message.value.length - 1].message = "";
+    tmpMessage.value = "";
+    is_done.value = false;
+    send_loading.value = true;
+
+    res.forEach((content, index) => {
+      setTimeout(() => {
+        tmpMessage.value += content;
+        me_message.value[me_message.value.length - 1].message =
+          tmpMessage.value;
+        down_message();
+
+        if (index === res.length - 1) {
+          console.log("done");
+          is_done.value = true;
+          send_loading.value = false;
+          send_form.value = { message_input: "", quote: "" };
+        }
+      }, index * 50);
+    });
+  }, 1500);
+};
 
 // api 发送消息
 const submitForm = async () => {
